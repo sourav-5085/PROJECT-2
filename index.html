@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" > 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="1st.css">
+       
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/5/w3.css"> -->
+  <link rel="stylesheet" type="text/css" href="media.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <div class="full">
+            <h2>Get In Touch</h2>
+            <div class="content1">
+                <div class="content2">
+                    <div class="input">
+                        <input type="text" placeholder="Name" id="texts">
+                        <i id="icon" class="fas fa-user"></i>
+                    </div>
+                    <div class="input">
+                        <input type="tel" placeholder="Phone" id="numbers" onkeyup="numberchick()">
+                        <i id="icon" class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <div class="input">
+                        <input type="Email" placeholder="Email" id="Emails">
+                        <i id="icon" class="fa-solid fa-envelope"></i>
+                    </div>
+                    <!-- <div class="input">
+                        <input type="password" name="" placeholder="password" id="password">
+                        <i class="fa-solid fa-eye" onclick="showpass()" id="eyes"></i>
+                    </div> -->
+                </div>
+                <div class="text">
+                    <textarea name="" id="area" placeholder="Message"></textarea>
+                    <i id="lasticon" class="abslut fa-solid fa-pen-to-square"></i>
+                </div>
+
+            </div>
+            <button onclick="clickme()" type="submit">Make An Request</button>
+                    </div>
+    </form>
+    <script>
+        function clickme()
+        {
+            let a=document.getElementById('texts').value;
+            let b=document.getElementById('numbers').value;
+            let c=document.getElementById('Emails').value;
+            let d=document.getElementById('area').value;
+            if(a=="" || b==""|| c=="")
+            {
+                alert("Form is Not Fill");
+            }
+            else if(!/^[A-Z a-z]+$/.test(a))
+            {
+                alert("Name input only text");
+            }
+            else if(!/^[0-9]+$/.test(b))
+            {
+                alert("Enter Only numbers");
+            }
+            else if(b.length!=10)
+            {
+                alert("Enter 10 numbers")
+            }
+            else if(!/^[a-z][^\s@]+@[^\s@]+\.[^\s@]+$/.test(c))
+            {
+                alert("Enter valid email");
+            }
+            // else if(!/^[A-Z a-z]+$/.test(d))
+            // {
+            //     alert("Message only text");
+            // }
+            else
+            {
+                alert("Submit");
+            }
+        }
+        function numberclick()
+        {
+            let f=document.getElementById('numbers').value;
+            if(isNaN(f))
+            {
+                alert("Enter Only numbers");
+            }
+        }
+        var m=1;
+        function showpass()
+        {
+            let k=document.getElementById('password').value;
+            console.log(k);
+            if(m==1)
+            {
+                document.getElementById('password').type="text";
+                document.getElementById('password').value=k;
+                m=m+1;
+            }
+            else
+            {
+                document.getElementById('password').type="password";
+                document.getElementById('password').value=k;
+                m=m-1;
+            }
+        }
+    </script>
+</body>
+</html>
